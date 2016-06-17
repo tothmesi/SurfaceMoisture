@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="SurfaceMoistureLib.Exceptions.ScaleValueOutOfRangeException">
+    <Position X="19.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\ScaleValueOutOfRangeException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SurfaceMoistureLib.Exceptions.ScaleValuesUnorderedException">
+    <Position X="19.25" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\ScaleValuesUnorderedException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SurfaceMoistureLib.MeasuringLocation">
+    <Position X="0.5" Y="2" Width="3" />
+    <AssociationLine Name="MeasuringPoints" Type="SurfaceMoistureLib.MeasuringPoint" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="3.555" />
+        <Point X="2" Y="4.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.144" Y="0.127" Height="0.182" Width="1.465" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Measuring\MeasuringLocation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="MeasuringPoints" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SurfaceMoistureLib.MeasuringLocationManager">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Measuring\MeasuringLocationManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Locations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SurfaceMoistureLib.MeasuringPoint">
+    <Position X="1.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Measuring\MeasuringPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SurfaceMoistureLib.CategoryColor">
+    <Position X="13.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAgAAAAAAAA=</HashCode>
+      <FileName>Palettes\CategoryColor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="colors" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SurfaceMoistureLib.Interval">
+    <Position X="13.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAEAAAAAAAAAAAIAAAAAQAAAAAAAAI=</HashCode>
+      <FileName>Palettes\Interval.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SurfaceMoistureLib.Palette">
+    <Position X="11.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAIAAIAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Palettes\Palette.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SurfaceMoistureLib.ProjectConfig">
+    <Position X="5.75" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>ProjectConfig.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="MeasuringLocationManager" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="Palettes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Struct Name="SurfaceMoistureLib.Color">
+    <Position X="16.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAACAEAAQA=</HashCode>
+      <FileName>Palettes\Color.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="SurfaceMoistureLib.CategoryType">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAYAAAAAAAAAAAAAAAABAAAAAAIgAAAAA=</HashCode>
+      <FileName>Palettes\CategoryType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

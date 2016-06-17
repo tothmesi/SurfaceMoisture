@@ -9,9 +9,13 @@ namespace SurfaceMoistureLib
     public class CategoryColor
     {
         //Van egy külön enum a katagóriák neveivel (CategoryColorType), ehhez rendelem hozzá a színeket egy dictionaryben
-        Dictionary<CategoryType, Color> colors = new Dictionary<CategoryType, Color>();
+        readonly Dictionary<CategoryType, Color> colors = new Dictionary<CategoryType, Color>();
 
-
+        /// <summary>
+        /// Adott kategóriához tartozó szín lekérése
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public Color? GetColor(CategoryType type)
         {
             if (colors.ContainsKey(type))
@@ -22,6 +26,11 @@ namespace SurfaceMoistureLib
 
         //Ezt kell meghívnom a "Nincs érték"-re is, és majd a színezésnél dönti el, ha van érték, a négy másikból választ
         //ha nincs érték, akkor ezt
+        /// <summary>
+        /// Kategáriához tartozó szín beállítása
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="color"></param>
         public void SetColor(CategoryType type, Color color) 
         {
             if (colors.ContainsKey(type))

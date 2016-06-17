@@ -14,7 +14,7 @@ namespace SurfaceMoistureLib
     {
 
         public List<Palette> Palettes = new List<Palette>();
-        public 
+        public MeasuringLocationManager MeasuringLocationManager = new MeasuringLocationManager();
 
 
         //TODO kell majd egy függvény, ami inicializálja ezeket indulási értékekkel

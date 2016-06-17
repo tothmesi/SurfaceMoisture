@@ -22,18 +22,34 @@ namespace SurfaceMoistureLib
             //A max paraméter logolás és ellenőrzés miatt van benne 
             //(műszer maximuma egyébként az utolsó kategória felső határa)
             int[] ordered = scaleValues.OrderBy(x => x).ToArray();
+
+            //alsó határ ellenőrzése
             if (ordered[0] < 0)
                 throw new ScaleValueOutOfRangeException(ordered[0], max);
 
+            //felső határ ellenőrzése
             if (ordered[ordered.Length - 1] > max)
                 throw new ScaleValueOutOfRangeException(ordered[ordered.Length - 1], max);
-
+            
+            //az egyes értékek ellenőrzése
             for (int i = 0; i < scaleValues.Length; i++)
             {
-                if (scaleValues[i] != ordered[i] || (i > 0 && scaleValues[i] <= scaleValues[i-1]))
+                if (scaleValues[i] != ordered[i] || (i > 0 && scaleValues[i] <= scaleValues[i - 1]))
+                {
+                    //ha nem egyezik meg az eleme a rendezett tömb elemével -> nem növekvő sorrendben adták meg
+                    //ha nem nagyobb a következő elem az előzőnél -> nem monoton növekvő
                     throw new ScaleValuesUnorderedException(scaleValues);
+                }
             }
 
+            //a fenti ciklus ezzel ekvivalens: 
+            //az eredeti lista megegyezik-e a rendezettel és 
+            //megegyezik-e a lista elemszáma, ha csak a különböző elemeket veszem
+            //if (!scaleValues.SequenceEqual(ordered) || scaleValues.Distinct().Count() != scaleValues.Length)
+            //    throw new ScaleValuesUnorderedException(scaleValues);
+
+
+            //beállítjuk a megadott értékhatárok alapján az egyes intervallumok alsó és felső határait és a kategóriját
             for (int i = 0; i < scaleValues.Length; i++)
             {
                 Intervals[i] = new Interval();
@@ -44,7 +60,6 @@ namespace SurfaceMoistureLib
                 
                 Intervals[i].To = scaleValues[i];
                 Intervals[i].Type = (CategoryType) (i + 1);
-                
             }
 
         }
