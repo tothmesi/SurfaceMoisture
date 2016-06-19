@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SurfaceMoistureLib
 {
@@ -7,14 +8,22 @@ namespace SurfaceMoistureLib
     /// </summary>
     public class MeasuringLocation
     {
-        public int Id;
-        //még nem tudom, a koordinátákat hogyan tárolom, de kell majd rá egy osztály
-        
-        public List<MeasuringPoint> MeasuringPoints = new List<MeasuringPoint>();
+        public readonly int Id;
+        public string Description;
+        public float CordX;
+        public float CordY;
+        public readonly List<MeasuringPoint> MeasuringPoints = new List<MeasuringPoint>();
 
-        public void SetPoints ()
+        /// <summary>
+        /// Beállítja a mérési pontok értékeit
+        /// </summary>
+        /// <param name="measuringHeights">Mérési magasságokhoz tartozó palettaazonosítók</param>
+        public MeasuringLocation(int[] measuringHeights)
         {
-            
+            //TODO 2016.06.19 Kanyó: azonosítót kreálni neki
+
+            //TODO 2016.06.19 Kanyó: hozzáadni annyi új mérési pontot a megadott paletta azonosítóval, amennyi kell
+            throw new NotImplementedException();
         }
 
         

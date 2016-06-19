@@ -16,39 +16,20 @@
   </Class>
   <Class Name="SurfaceMoistureLib.MeasuringLocation">
     <Position X="0.5" Y="2" Width="3" />
-    <AssociationLine Name="MeasuringPoints" Type="SurfaceMoistureLib.MeasuringPoint" FixedToPoint="true">
-      <Path>
-        <Point X="2" Y="3.555" />
-        <Point X="2" Y="4.25" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
-        <Position X="0.144" Y="0.127" Height="0.182" Width="1.465" />
-      </MemberNameLabel>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAgAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAABAAAAAAAAIAAAAAACAAAAAAABAAAAA=</HashCode>
       <FileName>Measuring\MeasuringLocation.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Field Name="MeasuringPoints" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SurfaceMoistureLib.MeasuringLocationManager">
     <Position X="0.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Measuring\MeasuringLocationManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Field Name="Locations" />
     </ShowAsCollectionAssociation>
-  </Class>
-  <Class Name="SurfaceMoistureLib.MeasuringPoint">
-    <Position X="1.25" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
-      <FileName>Measuring\MeasuringPoint.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Class Name="SurfaceMoistureLib.CategoryColor">
     <Position X="13.75" Y="5" Width="1.75" />
@@ -80,15 +61,19 @@
   <Class Name="SurfaceMoistureLib.ProjectConfig">
     <Position X="5.75" Y="0.5" Width="4" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAABCAAAA=</HashCode>
       <FileName>ProjectConfig.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="MeasuringLocationManager" />
     </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
-      <Field Name="Palettes" />
-    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SurfaceMoistureLib.MeasuringPoint">
+    <Position X="1.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Measuring\MeasuringPoint.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Struct Name="SurfaceMoistureLib.Color">
     <Position X="16.5" Y="5" Width="1.5" />

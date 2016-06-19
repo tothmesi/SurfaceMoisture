@@ -5,13 +5,21 @@ namespace SurfaceMoistureLib
 {
     public class Palette
     {
-        public int Id;
+        public readonly int Id;
         public string Name;
-        //TODO 
-        public Interval[] Intervals = new Interval[4];
+        public readonly Interval[] Intervals = new Interval[4];
 
-        //legyen benne range ellenőrzés (növekvő-e és intervallumban van-e)
-        //ciklusban példányosítok Intervallokat és a tömbnek odaadom
+        //TODO 2016.06.19 Kanyó: végigverni a rendszeren, hogy ilyet nem lehet törölni
+        /// <summary>
+        /// Beépetett paletta
+        /// </summary>
+        public bool IsBuiltIn;
+
+        public Palette()
+        {
+            //TODO 2016.06.19 Kanyó: ID generálása
+        }
+
         /// <summary>
         /// Beállítom a palettához tartozó szárazsági kategóriák tartományait
         /// </summary>
@@ -19,8 +27,13 @@ namespace SurfaceMoistureLib
         /// <param name="max">A műszer mérési tartományának felső korlátja</param>
         public void SetPalette(int[] scaleValues, int max)
         {
+            //TODO 2016.06.19 Kanyó: name?
+
+            //Azért SetPalette és nem konstruktorban történik, mert a példány módosításánál is 
+            //ez hívódik meg - a konstruktor pedig csak egyszer hívható
+
             //A max paraméter logolás és ellenőrzés miatt van benne 
-            //(műszer maximuma egyébként az utolsó kategória felső határa)
+            //(műszer maximuma az utolsó kategória felső határa)
             int[] ordered = scaleValues.OrderBy(x => x).ToArray();
 
             //alsó határ ellenőrzése
@@ -28,9 +41,15 @@ namespace SurfaceMoistureLib
                 throw new ScaleValueOutOfRangeException(ordered[0], max);
 
             //felső határ ellenőrzése
-            if (ordered[ordered.Length - 1] > max)
-                throw new ScaleValueOutOfRangeException(ordered[ordered.Length - 1], max);
+            if (ordered[ordered.Length - 1] != max)
+                throw new ScaleValueMismatchedToMaxException(ordered[ordered.Length - 1], max);
+           
             
+            //TODO 2016.06.19 Kanyó: kezelni, ha az utolsó felső határ értéke kisebb a maxnál
+            //ilyenkor marad egy intervallum a mérési tartomány felső végén, 
+            //hogy ha ott mér valamit, akkor az nem esik egyik tartományba sem!!
+
+
             //az egyes értékek ellenőrzése
             for (int i = 0; i < scaleValues.Length; i++)
             {

@@ -11,9 +11,7 @@ namespace SurfaceMoistureLib
     /// </summary>
     public class MeasuringPoint
     {
-        public int value;
-
-        public int height;
-        
+        public int Value;
+        public int PaletteId;
     }
 }
