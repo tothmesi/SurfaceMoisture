@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SurfaceMoistureLib
+﻿namespace SurfaceMoistureLib
 {
     public class Interval
     {
@@ -24,6 +19,11 @@ namespace SurfaceMoistureLib
             return string.Format("Intervallum: [{0} - {1}], {2}", From, To, Type);
         }
 
+        /// <summary>
+        /// Az érték benne van-e az intervallumban
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public bool IsInInterval(int value)
         {
             return (From <= value && value < To);

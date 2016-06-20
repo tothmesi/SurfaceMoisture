@@ -39,16 +39,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoryColor.cs" />
-    <Compile Include="CategoryType.cs" />
-    <Compile Include="Color.cs" />
+    <Compile Include="Exceptions\ScaleValueMismatchedToMaxException.cs" />
+    <Compile Include="Measuring\HeightManager.cs" />
+    <Compile Include="Measuring\MeasuringLocationManager.cs" />
+    <Compile Include="Measuring\MeasuringPoint.cs" />
+    <Compile Include="Palettes\CategoryColor.cs" />
+    <Compile Include="Palettes\CategoryType.cs" />
+    <Compile Include="Palettes\Color.cs" />
     <Compile Include="Exceptions\ScaleValueOutOfRangeException.cs" />
     <Compile Include="Exceptions\ScaleValuesUnorderedException.cs" />
-    <Compile Include="Interval.cs" />
-    <Compile Include="MeasuringPoint.cs" />
-    <Compile Include="Palette.cs" />
+    <Compile Include="Palettes\Interval.cs" />
+    <Compile Include="Palettes\Palette.cs" />
+    <Compile Include="Palettes\PaletteManager.cs" />
+    <Compile Include="ProjectConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MeasuringLocation.cs" />
+    <Compile Include="Measuring\MeasuringLocation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
