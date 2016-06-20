@@ -21,7 +21,7 @@ namespace SurfaceMoistureLib
         }
 
         //Ezt kell meghívnom a "Nincs érték"-re is, és majd a színezésnél dönti el, ha van érték, a négy másikból választ
-        //ha nincs érték, akkor ezt
+        //ha nincs érték, akkor értelemszerűen azt
         public void SetColor(CategoryType type, Color color) 
         {
             if (colors.ContainsKey(type))
