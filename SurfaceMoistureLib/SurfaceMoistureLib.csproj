@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\ScaleValueMismatchedToMaxException.cs" />
+    <Compile Include="Exceptions\ValuesAndHeightsMismatchException.cs" />
     <Compile Include="Measuring\HeightManager.cs" />
     <Compile Include="Measuring\MeasuringLocationManager.cs" />
     <Compile Include="Measuring\MeasuringPoint.cs" />
