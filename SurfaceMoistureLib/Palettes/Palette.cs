@@ -9,15 +9,16 @@ namespace SurfaceMoistureLib
         public string Name;
         public readonly Interval[] Intervals = new Interval[4];
 
-        //TODO 2016.06.19 Kanyó: végigverni a rendszeren, hogy ilyet nem lehet törölni
         /// <summary>
-        /// Beépetett paletta
+        /// Beépített paletta
         /// </summary>
         public bool IsBuiltIn;
 
-        public Palette()
+        public Palette(int id, int[] scaleValues, int max, string name)
         {
-            //TODO 2016.06.19 Kanyó: ID generálása
+            Id = id;
+            SetPalette(scaleValues, max);
+            Name = name;
         }
 
         /// <summary>

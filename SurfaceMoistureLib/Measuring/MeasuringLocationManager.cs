@@ -48,11 +48,5 @@ namespace SurfaceMoistureLib
             //ugyanez: Locations.ForEach(x => { if (x.Id > id) x.Id--; });
             LocationIdCounter--;
         }
-
-        public void InsertLocation()
-        {
-            //TODO
-            throw new NotImplementedException();
-        }
     }
 }

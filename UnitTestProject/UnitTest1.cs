@@ -14,11 +14,10 @@ namespace UnitTestProject
         {
             try
             {
-                var palette = new Palette();
 
                 int[] scaleValues = { 40, 70, 100, 140 };
                 int max = 160;
-                palette.SetPalette(scaleValues, max);
+                var palette = new Palette(1, scaleValues, max, name: "testPalette");
 
                 var expectedIntervals = new[]
                 {
@@ -55,11 +54,10 @@ namespace UnitTestProject
         [TestMethod]
         public void SetPaletteTest()
         {
-            var palette = new Palette();
 
             int[] scaleValues = { 40, 70, 100, 140 };
             int max = 140;
-            palette.SetPalette(scaleValues, max);
+            var palette = new Palette(2, scaleValues, max, name: "testPalette2");
 
             var expectedIntervals = new[]
                 {

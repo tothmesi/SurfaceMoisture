@@ -51,7 +51,6 @@
     <Compile Include="Exceptions\ScaleValuesUnorderedException.cs" />
     <Compile Include="Palettes\Interval.cs" />
     <Compile Include="Palettes\Palette.cs" />
-    <Compile Include="Palettes\PaletteManager.cs" />
     <Compile Include="ProjectConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Measuring\MeasuringLocation.cs" />

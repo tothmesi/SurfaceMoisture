@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SurfaceMoistureLib.Measuring;
-using SurfaceMoistureLib.Palettes;
 
 namespace SurfaceMoistureLib
 {
+
+
     /// <summary>
     /// Egy projecthez tartozó, átfogó beállítások, sorosítások
     /// Anyagokhoz tartozó paletták, mintavételi helyek listája, mérési magasságok száma
@@ -20,20 +19,17 @@ namespace SurfaceMoistureLib
         //egy palettát vakolatra
 
         public MeasuringLocationManager MeasuringLocationManager = new MeasuringLocationManager();
-        public PaletteManager PaletteManager = new PaletteManager();
         public HeightManager HeightManager = new HeightManager();
+        public static int PaletteIdCounter = 1;
+
+        //readonly, mert a paletta lista referenciáját nem változtatom, csak a benne lévő elemeket
+        public readonly List<Palette> Palettes = new List<Palette>();
+
 
         public void AddPalette(string name, int[] scaleValues, int max)
         {
-            var palette = new Palette()
-            {
-                //TODO név hol legyen beállítva?
-                Name = name,
-                IsBuiltIn = false
-            };
-
-            palette.SetPalette(scaleValues, max);
-            PaletteManager.Palettes.Add(palette);
+            var palette = new Palette(PaletteIdCounter++, scaleValues, max, name);
+            Palettes.Add(palette);
         }
 
         /// <summary>
@@ -43,14 +39,30 @@ namespace SurfaceMoistureLib
         /// <returns>Érintett mérési helyek azonosítói</returns>
         public int[] RemovePalette(int paletteId)
         {
-            
+            //Megnézni, hogy valamelyik mérési ponthoz hozzátartozik-e
+            int[] results = MeasuringLocationManager
+                .Locations
+                .Where(x => x.MeasuringPoints.Where(y => y.PaletteId == paletteId).Any())
+                .Select(z => z.Id)
+                .ToArray();
 
-            //TODO megnézni, hogy valamelyik mérési ponthoz hozzátartozik-e
             //ha igen, akkor szólni kell a felhasználónak, hogy melyik érintett
+            if (results.Any())
+                return results;
+
             //ha nincs, akkor törölhető a paletták közül
+            Palette pal = Palettes.SingleOrDefault(x => x.Id == paletteId);
+
+            if (pal != null)
+                Palettes.Remove(pal);
+
             return null;
         }
 
-        
+        public void InitComponents()
+        {
+            //TODO
+            throw new NotImplementedException();
+        }
     }
 }
